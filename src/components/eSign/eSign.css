@@ -1,0 +1,63 @@
+.esign {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.esign-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.esign-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.esign .section-title {
+  color: white;
+}
+
+.esign .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.esign .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.esign .feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-left: 4px solid white;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.esign .feature-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.esign .feature-title {
+  color: white;
+}
+
+.esign .feature-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .esign {
+    padding: 3rem 1rem;
+  }
+  
+  .esign .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

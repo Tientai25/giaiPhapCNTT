@@ -1,0 +1,77 @@
+.customers {
+  padding: 5rem 2rem;
+  background: #f8fafc;
+}
+
+.customers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.customers .section-subtitle {
+  color: #64748b;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.customers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.customer-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s;
+}
+
+.customer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.customer-logo {
+  margin-bottom: 1.5rem;
+}
+
+.logo-placeholder {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.customer-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.customer-description {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .customers {
+    padding: 3rem 1rem;
+  }
+  
+  .customers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
