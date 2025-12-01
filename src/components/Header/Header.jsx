@@ -1,9 +1,11 @@
 import './Header.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -22,6 +24,7 @@ function Header() {
     } else {
       navigate('/', { state: { sectionId } });
     }
+    setMobileMenuOpen(false);
   };
 
   const handleLogin = () => {
@@ -58,7 +61,44 @@ function Header() {
             Dùng thử miễn phí
           </button>
         </div>
+
+        {/* Mobile Hamburger Menu */}
+        <button
+          type="button"
+          className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {mobileMenuOpen && (
+        <nav className="mobile-menu">
+          <button type="button" onClick={() => handleNavClick('home')}>
+            Trang chủ
+          </button>
+          <button type="button" onClick={() => handleNavClick('solutions')}>
+            Giải pháp
+          </button>
+          <button type="button" onClick={() => handleNavClick('pricing')}>
+            Báo giá
+          </button>
+          <button type="button" onClick={() => handleNavClick('contact')}>
+            Liên hệ
+          </button>
+          <div className="mobile-menu-divider"></div>
+          <button type="button" className="mobile-btn-secondary" onClick={() => { handleLogin(); setMobileMenuOpen(false); }}>
+            Đăng nhập
+          </button>
+          <button type="button" className="mobile-btn-primary" onClick={() => { navigate('/lien-he'); setMobileMenuOpen(false); }}>
+            Dùng thử miễn phí
+          </button>
+        </nav>
+      )}
     </header>
   );
 }
