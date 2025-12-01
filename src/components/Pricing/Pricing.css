@@ -21,12 +21,32 @@
   border-radius: 12px;
   border: 2px solid #e2e8f0;
   position: relative;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.pricing-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.pricing-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pricing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .pricing-card.popular {
@@ -34,10 +54,12 @@
   color: white;
   border-color: transparent;
   transform: scale(1.05);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .pricing-card.popular:hover {
-  transform: scale(1.05) translateY(-5px);
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.4);
 }
 
 .popular-badge {
@@ -111,7 +133,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   border: none;
 }
 
@@ -122,8 +144,8 @@
 
 .plan-button.btn-primary:hover {
   background: #f3f4f6;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .plan-button.btn-secondary {
@@ -133,8 +155,8 @@
 
 .plan-button.btn-secondary:hover {
   background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
 }
 
 @media (max-width: 968px) {

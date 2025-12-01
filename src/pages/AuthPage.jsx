@@ -2,9 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Auth from '../components/Auth/Auth';
 import Footer from '../components/Footer/Footer';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 function AuthPage() {
   const navigate = useNavigate();
+  useScrollToTop();
 
   return (
     <>

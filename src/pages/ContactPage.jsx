@@ -2,9 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 function ContactPage() {
   const navigate = useNavigate();
+  useScrollToTop();
 
   return (
     <>

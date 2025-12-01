@@ -10,10 +10,12 @@ import Customers from '../components/Customers/Customers';
 import Footer from '../components/Footer/Footer';
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 function Home() {
   const location = useLocation();
   const navigate = useNavigate();
+  useScrollToTop();
 
   useEffect(() => {
     if (location.state?.sectionId) {

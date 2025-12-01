@@ -5,9 +5,11 @@ import Footer from '../components/Footer/Footer';
 import Pricing from '../components/Pricing/Pricing';
 import '../styles/PricingPage.css';
 import '../styles/mobile.css';
+import useScrollToTop from '../hooks/useScrollToTop';
 
 function PricingPage() {
   const navigate = useNavigate();
+  useScrollToTop();
 
   return (
     <>
