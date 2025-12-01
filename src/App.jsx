@@ -1,30 +1,17 @@
 import './App.css';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Benefits from './components/Benefits/Benefits';
-import EContract from './components/eContract/eContract';
-import ESign from './components/eSign/eSign';
-import Process from './components/Process/Process';
-import WhyChoose from './components/WhyChoose/WhyChoose';
-import Customers from './components/Customers/Customers';
-import Pricing from './components/Pricing/Pricing';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AuthPage from './pages/AuthPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <Benefits />
-      <EContract />
-      <ESign />
-      <Process />
-      <WhyChoose />
-      <Customers />
-      <Pricing />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dang-nhap" element={<AuthPage />} />
+        <Route path="/lien-he" element={<ContactPage />} />
+      </Routes>
     </div>
   );
 }
