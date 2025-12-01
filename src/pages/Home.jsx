@@ -6,8 +6,6 @@ import ESign from '../components/eSign/eSign';
 import Process from '../components/Process/Process';
 import WhyChoose from '../components/WhyChoose/WhyChoose';
 import Customers from '../components/Customers/Customers';
-// import Pricing from '../components/Pricing/Pricing';
-// import Auth from '../components/Auth/Auth';
 
 import Footer from '../components/Footer/Footer';
 import { useEffect } from 'react';
@@ -36,7 +34,6 @@ function Home() {
       <ESign />
       <Process />
       <WhyChoose />
-      {/* <Pricing /> */}
       <Customers />   
       <Footer />
     </>

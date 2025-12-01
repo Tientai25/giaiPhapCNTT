@@ -1,5 +1,5 @@
 .pricing {
-  padding: 5rem 2rem;
+  /* add top offset so content sits below fixed header */
   background: white;
 }
 

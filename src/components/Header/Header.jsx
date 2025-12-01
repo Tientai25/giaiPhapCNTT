@@ -15,6 +15,8 @@ function Header() {
   const handleNavClick = (sectionId) => {
     if (sectionId === 'contact') {
       navigate('/lien-he');
+    } else if (sectionId === 'pricing') {
+      navigate('/bao-gia');
     } else if (location.pathname === '/') {
       scrollToSection(sectionId);
     } else {

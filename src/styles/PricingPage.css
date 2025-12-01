@@ -1,0 +1,72 @@
+/* Styles for PricingPage hero and layout */
+.pricing-hero {
+  background: linear-gradient(90deg, #f8fafc 0%, #ffffff 100%);
+  border-bottom: 1px solid #eef2f7;
+  /* push hero down so fixed header doesn't cover it */
+  padding: calc(2.5rem + 72px) 1rem 2.5rem 1rem;
+}
+
+.pricing-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hero-text h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.75rem;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 0;
+  color: #475569;
+  font-size: 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-primary {
+  background: #0ea5a4;
+  color: white;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0d9b99;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 164, 0.3);
+}
+
+.pricing-page-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem 3rem 1rem;
+}
