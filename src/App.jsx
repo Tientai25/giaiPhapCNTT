@@ -5,6 +5,8 @@ import AuthPage from './pages/AuthPage';
 import ContactPage from './pages/ContactPage';
 import Pricing from './components/Pricing/Pricing';
 import PricingPage from './pages/PricingPage';
+import VAsProductPage from './pages/VAsProductPage';
+import BusinessManagementPage from './pages/BusinessManagementPage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/dang-nhap" element={<AuthPage />} />
         <Route path="/bao-gia" element={<PricingPage />} />
         <Route path="/lien-he" element={<ContactPage />} />
+        <Route path="/san-pham/vas-thuong-mai-dien-tu" element={<VAsProductPage />} />
+        <Route path="/san-pham/quan-ly-doanh-nghiep" element={<BusinessManagementPage />} />
       </Routes>
     </div>
   );

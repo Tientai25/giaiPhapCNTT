@@ -1,8 +1,8 @@
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import Benefits from '../components/Benefits/Benefits';
-import EContract from '../components/eContract/eContract';
-import ESign from '../components/eSign/eSign';
+import ECommerce from '../components/ECommerce/ECommerce';
+import BusinessManagement from '../components/BusinessManagement/BusinessManagement';
 import Process from '../components/Process/Process';
 import WhyChoose from '../components/WhyChoose/WhyChoose';
 import Customers from '../components/Customers/Customers';
@@ -31,9 +31,9 @@ function Home() {
     <>
       <Header />
       <Hero />
+      <ECommerce />
+      <BusinessManagement />
       <Benefits />
-      <EContract />
-      <ESign />
       <Process />
       <WhyChoose />
       <Customers />   

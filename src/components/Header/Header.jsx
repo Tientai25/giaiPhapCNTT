@@ -6,6 +6,7 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productMenuOpen, setProductMenuOpen] = useState(false);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -33,19 +34,41 @@ function Header() {
     }
   };
 
+  const handleProductClick = (path) => {
+    navigate(path);
+    setProductMenuOpen(false);
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="header-container">
         <div className="logo" role="button" tabIndex={0} onClick={() => navigate('/')} onKeyDown={(e) => e.key === 'Enter' && navigate('/')}>
-          <h2>TDT eContract & eSign</h2>
+          <h2>TDT Solutions</h2>
         </div>
         <nav className="nav">
-          <button type="button" onClick={() => handleNavClick('home')}>
+          <button type="button" onClick={() => navigate('/')}>
             Trang chủ
           </button>
-          <button type="button" onClick={() => handleNavClick('solutions')}>
-            Giải pháp
-          </button>
+          <div 
+            className="nav-dropdown"
+            onMouseEnter={() => setProductMenuOpen(true)}
+            onMouseLeave={() => setProductMenuOpen(false)}
+          >
+            <button type="button">
+              Sản phẩm ▾
+            </button>
+            {productMenuOpen && (
+              <div className="dropdown-menu">
+                <button type="button" onClick={() => handleProductClick('/san-pham/vas-thuong-mai-dien-tu')}>
+                  🛒 VAs - TMĐT & Thanh Toán
+                </button>
+                <button type="button" onClick={() => handleProductClick('/san-pham/quan-ly-doanh-nghiep')}>
+                  📊 Quản Lý Doanh Nghiệp
+                </button>
+              </div>
+            )}
+          </div>
           <button type="button" onClick={() => handleNavClick('pricing')}>
             Báo giá
           </button>
@@ -78,12 +101,18 @@ function Header() {
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <nav className="mobile-menu">
-          <button type="button" onClick={() => handleNavClick('home')}>
+          <button type="button" onClick={() => { navigate('/'); setMobileMenuOpen(false); }}>
             Trang chủ
           </button>
-          <button type="button" onClick={() => handleNavClick('solutions')}>
-            Giải pháp
-          </button>
+          <div className="mobile-submenu">
+            <div className="mobile-submenu-title">Sản phẩm</div>
+            <button type="button" onClick={() => handleProductClick('/san-pham/vas-thuong-mai-dien-tu')}>
+              🛒 VAs - TMĐT & Thanh Toán
+            </button>
+            <button type="button" onClick={() => handleProductClick('/san-pham/quan-ly-doanh-nghiep')}>
+              📊 Quản Lý Doanh Nghiệp
+            </button>
+          </div>
           <button type="button" onClick={() => handleNavClick('pricing')}>
             Báo giá
           </button>

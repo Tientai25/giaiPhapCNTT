@@ -6,14 +6,14 @@ function Hero() {
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Hợp Đồng Điện Tử & Chữ Ký Số<br />
-            Cho Doanh Nghiệp Hiện Đại
+            Giải Pháp Chuyển Đổi Số<br />
+            Toàn Diện Cho Doanh Nghiệp
           </h1>
           <p className="hero-subtitle">
-            Tự động hóa toàn bộ quy trình ký kết – nhanh hơn, an toàn hơn, tiết kiệm hơn.
+            Hệ thống Thương mại điện tử & Phần mềm Quản lý – Tối ưu hiệu suất, tiết kiệm chi phí
           </p>
           <p className="hero-description">
-            Ký mọi lúc, mọi nơi, thay thế hoàn toàn ký tay và lưu trữ giấy tờ.
+            Từ bán hàng online đến quản trị doanh nghiệp, chúng tôi có giải pháp phù hợp cho mọi quy mô SME.
           </p>
           <div className="hero-cta">
             <button className="btn-primary-large">Dùng thử miễn phí</button>

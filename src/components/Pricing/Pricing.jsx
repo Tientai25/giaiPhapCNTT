@@ -4,36 +4,40 @@ import { useState } from 'react';
 function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState(null);
+  const [activeProduct, setActiveProduct] = useState('vas'); // 'vas' or 'business'
 
-  const plans = [
+  const vasPlans = [
     {
-      name: 'Gói Cá Nhân',
-      price: isAnnual ? 'Miễn phí' : 'Miễn phí',
-      monthlyPrice: 'Miễn phí',
-      annualPrice: 'Miễn phí',
-      features: [
-        'Ký 20 hợp đồng/tháng',
-        '1 người ký',
-        'Lưu trữ 1GB',
-        'Hỗ trợ qua email',
-        'Xác thực cơ bản'
-      ],
-      popular: false,
-      cta: 'Bắt đầu miễn phí'
-    },
-    {
-      name: 'Gói Pro',
-      price: isAnnual ? '199.000đ/tháng' : '249.000đ/tháng',
-      monthlyPrice: '249.000đ/tháng',
-      annualPrice: '199.000đ/tháng',
+      name: 'Gói Khởi Động',
+      price: isAnnual ? '1.990.000đ/tháng' : '2.490.000đ/tháng',
+      monthlyPrice: '2.490.000đ/tháng',
+      annualPrice: '1.990.000đ/tháng',
       savings: isAnnual ? '20% tiết kiệm' : '',
       features: [
-        'Không giới hạn hợp đồng',
-        'Tối đa 5 người ký',
-        'Lưu trữ 50GB',
-        'Hỗ trợ ưu tiên',
-        'Xác thực nâng cao',
-        'Báo cáo & thống kê'
+        'Website TMĐT cơ bản',
+        'Tối đa 500 sản phẩm',
+        'Thanh toán: QR, COD',
+        'Quản lý đơn hàng',
+        '10GB lưu trữ',
+        'Hỗ trợ email'
+      ],
+      popular: false,
+      cta: 'Dùng thử 14 ngày'
+    },
+    {
+      name: 'Gói Chuyên Nghiệp',
+      price: isAnnual ? '3.990.000đ/tháng' : '4.990.000đ/tháng',
+      monthlyPrice: '4.990.000đ/tháng',
+      annualPrice: '3.990.000đ/tháng',
+      savings: isAnnual ? '20% tiết kiệm' : '',
+      features: [
+        'Website TMĐT nâng cao',
+        'Không giới hạn sản phẩm',
+        'Thanh toán: Tất cả phương thức',
+        'Marketing tích hợp',
+        'Dashboard báo cáo',
+        '50GB lưu trữ',
+        'Hỗ trợ ưu tiên'
       ],
       popular: true,
       cta: 'Dùng thử 14 ngày'
@@ -44,31 +48,88 @@ function Pricing() {
       monthlyPrice: 'Liên hệ',
       annualPrice: 'Liên hệ',
       features: [
+        'Tùy chỉnh toàn diện',
         'Không giới hạn mọi thứ',
-        'Không giới hạn người ký',
+        'API tích hợp',
+        'Multi-store',
         'Lưu trữ không giới hạn',
         'Hỗ trợ 24/7',
-        'Xác thực bảo mật cao',
-        'Tích hợp API đầy đủ',
-        'SLA tùy chỉnh'
+        'SLA cam kết'
       ],
       popular: false,
       cta: 'Liên hệ ngay'
     }
   ];
 
+  const businessPlans = [
+    {
+      name: 'Gói Cơ Bản',
+      price: isAnnual ? '1.590.000đ/tháng' : '1.990.000đ/tháng',
+      monthlyPrice: '1.990.000đ/tháng',
+      annualPrice: '1.590.000đ/tháng',
+      savings: isAnnual ? '20% tiết kiệm' : '',
+      features: [
+        'Tối đa 10 users',
+        'Quản lý bán hàng & kho',
+        'Quản lý nhân sự cơ bản',
+        'Báo cáo cơ bản',
+        '10GB lưu trữ',
+        'Hỗ trợ email'
+      ],
+      popular: false,
+      cta: 'Dùng thử 14 ngày'
+    },
+    {
+      name: 'Gói Chuyên Nghiệp',
+      price: isAnnual ? '2.990.000đ/tháng' : '3.690.000đ/tháng',
+      monthlyPrice: '3.690.000đ/tháng',
+      annualPrice: '2.990.000đ/tháng',
+      savings: isAnnual ? '20% tiết kiệm' : '',
+      features: [
+        'Tối đa 50 users',
+        'Đầy đủ tính năng quản lý',
+        'CRM & Marketing',
+        'Quản lý tài chính',
+        'Báo cáo nâng cao',
+        '50GB lưu trữ',
+        'Hỗ trợ ưu tiên'
+      ],
+      popular: true,
+      cta: 'Dùng thử 14 ngày'
+    },
+    {
+      name: 'Gói Doanh Nghiệp',
+      price: 'Liên hệ',
+      monthlyPrice: 'Liên hệ',
+      annualPrice: 'Liên hệ',
+      features: [
+        'Không giới hạn users',
+        'Tùy chỉnh quy trình',
+        'Tích hợp API',
+        'Multi-chi nhánh',
+        'Lưu trữ không giới hạn',
+        'Hỗ trợ 24/7',
+        'Training & Onboarding'
+      ],
+      popular: false,
+      cta: 'Liên hệ ngay'
+    }
+  ];
+
+  const plans = activeProduct === 'vas' ? vasPlans : businessPlans;
+
   const faqs = [
     {
-      question: 'Gói Cá Nhân có thể nâng cấp lên gói Pro không?',
-      answer: 'Có, bạn có thể nâng cấp bất kỳ lúc nào. Chúng tôi sẽ tính toán theo tỉ lệ cho các ngày còn lại trong tháng.'
+      question: 'Có thể dùng thử trước khi quyết định không?',
+      answer: 'Có, tất cả các gói (trừ gói Doanh Nghiệp) đều có 14 ngày dùng thử miễn phí. Không cần thẻ tín dụng khi đăng ký.'
     },
     {
-      question: 'Có thể hủy gói bất kỳ lúc nào không?',
-      answer: 'Có, bạn có thể hủy gói bất kỳ lúc nào. Không có hợp đồng dài hạn hay phí hủy. Dữ liệu của bạn sẽ được giữ trong 30 ngày.'
+      question: 'Có thể nâng cấp hoặc hạ cấp gói bất kỳ lúc nào không?',
+      answer: 'Có, bạn có thể thay đổi gói bất kỳ lúc nào. Chúng tôi sẽ tính toán theo tỉ lệ cho các ngày còn lại trong tháng.'
     },
     {
-      question: 'Có hỗ trợ cho tích hợp API không?',
-      answer: 'Gói Pro và Doanh Nghiệp đều hỗ trợ tích hợp API. Để biết thêm chi tiết, vui lòng liên hệ với đội bán hàng.'
+      question: 'Có hỗ trợ triển khai và đào tạo không?',
+      answer: 'Gói Chuyên Nghiệp có tài liệu hướng dẫn chi tiết. Gói Doanh Nghiệp bao gồm training trực tiếp và hỗ trợ onboarding.'
     },
     {
       question: 'Thanh toán hàng năm có được giảm giá không?',
@@ -81,7 +142,23 @@ function Pricing() {
       <div className="pricing-container">
         <div className="pricing-header">
           <h2 className="section-title">Bảng Giá</h2>
-          <p className="section-subtitle">Chọn gói phù hợp với nhu cầu của bạn</p>
+          <p className="section-subtitle">Chọn sản phẩm và gói phù hợp với doanh nghiệp của bạn</p>
+        </div>
+
+        {/* Product Tabs */}
+        <div className="product-tabs">
+          <button 
+            className={`tab-btn ${activeProduct === 'vas' ? 'active' : ''}`}
+            onClick={() => setActiveProduct('vas')}
+          >
+            🛒 VAs - TMĐT & Thanh Toán
+          </button>
+          <button 
+            className={`tab-btn ${activeProduct === 'business' ? 'active' : ''}`}
+            onClick={() => setActiveProduct('business')}
+          >
+            📊 Quản Lý Doanh Nghiệp
+          </button>
         </div>
 
         {/* Billing Toggle */}
