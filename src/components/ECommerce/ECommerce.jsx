@@ -58,7 +58,7 @@ function ECommerce() {
         <div className="section-header">
           <span className="section-badge">Sản phẩm nổi bật</span>
           <h2 className="section-title">
-            VAs – Hệ Thống Thương Mại Điện Tử<br />
+            VAS – Hệ Thống Thương Mại Điện Tử<br />
             & Thanh Toán Thông Minh
           </h2>
           <p className="section-description">
@@ -90,7 +90,7 @@ function ECommerce() {
         </div>
 
         <div className="cta-section">
-          <button className="btn-primary-large">Tìm hiểu thêm về VAs</button>
+          <button className="btn-primary-large">Tìm hiểu thêm về VAS</button>
           <button className="btn-outline-large">Đăng ký dùng thử</button>
         </div>
       </div>

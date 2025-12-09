@@ -86,7 +86,7 @@ function VAsProductPage() {
           <div className="container">
             <div className="hero-badge">Giải pháp Thương mại điện tử</div>
             <h1 className="hero-title">
-              VAs – Hệ Thống TMĐT<br />
+              VAS – Hệ Thống TMĐT<br />
               & Thanh Toán Thông Minh
             </h1>
             <p className="hero-description">

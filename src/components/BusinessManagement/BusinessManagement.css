@@ -251,8 +251,27 @@
     padding: 60px 0;
   }
 
+  .business-section::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-badge {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+  }
+
   .section-title {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
+    margin-bottom: 16px;
   }
 
   .section-description {
@@ -262,6 +281,113 @@
   .features-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .feature-card {
+    padding: 30px 24px;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.125rem;
+  }
+
+  .benefits-section {
+    padding: 40px 24px;
+    margin-bottom: 40px;
+  }
+
+  .benefits-title,
+  .use-cases-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .benefit-item {
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+
+  .benefit-check {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  }
+
+  .use-cases {
+    margin-bottom: 40px;
+  }
+
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .use-case-card {
+    padding: 20px 24px;
+  }
+
+  .use-case-icon {
+    font-size: 2.25rem;
+  }
+
+  .use-case-text {
+    font-size: 1rem;
+  }
+
+  .cta-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary-large,
+  .btn-outline-large {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .business-section {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .section-badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+  }
+
+  .feature-card {
+    padding: 24px 20px;
+  }
+
+  .feature-icon {
+    font-size: 2.25rem;
+  }
+
+  .feature-title {
+    font-size: 1.05rem;
+  }
+
+  .feature-description {
+    font-size: 0.9rem;
   }
 
   .benefits-section {
@@ -270,23 +396,28 @@
 
   .benefits-title,
   .use-cases-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .benefit-item {
+    font-size: 0.875rem;
+  }
+
+  .use-case-card {
+    padding: 18px 20px;
+  }
+
+  .use-case-icon {
+    font-size: 2rem;
+  }
+
+  .use-case-text {
     font-size: 0.95rem;
-  }
-
-  .use-cases-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-section {
-    flex-direction: column;
   }
 
   .btn-primary-large,
   .btn-outline-large {
-    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
 }

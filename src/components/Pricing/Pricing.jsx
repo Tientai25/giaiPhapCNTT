@@ -151,7 +151,7 @@ function Pricing() {
             className={`tab-btn ${activeProduct === 'vas' ? 'active' : ''}`}
             onClick={() => setActiveProduct('vas')}
           >
-            🛒 VAs - TMĐT & Thanh Toán
+            🛒 VAS - TMĐT & Thanh Toán
           </button>
           <button 
             className={`tab-btn ${activeProduct === 'business' ? 'active' : ''}`}

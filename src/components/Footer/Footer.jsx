@@ -24,7 +24,7 @@ function Footer() {
           <div className="footer-section">
             <h3 className="footer-title">Sản phẩm</h3>
             <ul className="footer-links">
-              <li><a href="/san-pham/vas-thuong-mai-dien-tu" onClick={(e) => { e.preventDefault(); navigate('/san-pham/vas-thuong-mai-dien-tu'); }}>VAs - TMĐT & Thanh Toán</a></li>
+              <li><a href="/san-pham/vas-thuong-mai-dien-tu" onClick={(e) => { e.preventDefault(); navigate('/san-pham/vas-thuong-mai-dien-tu'); }}>VAS - TMĐT & Thanh Toán</a></li>
               <li><a href="/san-pham/quan-ly-doanh-nghiep" onClick={(e) => { e.preventDefault(); navigate('/san-pham/quan-ly-doanh-nghiep'); }}>Quản Lý Doanh Nghiệp</a></li>
               <li><a href="/bao-gia" onClick={(e) => { e.preventDefault(); navigate('/bao-gia'); }}>Bảng giá</a></li>
             </ul>

@@ -61,7 +61,7 @@ function Header() {
             {productMenuOpen && (
               <div className="dropdown-menu">
                 <button type="button" onClick={() => handleProductClick('/san-pham/vas-thuong-mai-dien-tu')}>
-                  🛒 VAs - TMĐT & Thanh Toán
+                  🛒 VAS - TMĐT & Thanh Toán
                 </button>
                 <button type="button" onClick={() => handleProductClick('/san-pham/quan-ly-doanh-nghiep')}>
                   📊 Quản Lý Doanh Nghiệp
@@ -107,7 +107,7 @@ function Header() {
           <div className="mobile-submenu">
             <div className="mobile-submenu-title">Sản phẩm</div>
             <button type="button" onClick={() => handleProductClick('/san-pham/vas-thuong-mai-dien-tu')}>
-              🛒 VAs - TMĐT & Thanh Toán
+              🛒 VAS - TMĐT & Thanh Toán
             </button>
             <button type="button" onClick={() => handleProductClick('/san-pham/quan-ly-doanh-nghiep')}>
               📊 Quản Lý Doanh Nghiệp

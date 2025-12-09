@@ -275,16 +275,49 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .product-hero {
+    padding: 80px 0 60px;
+  }
+
+  .product-hero::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+  }
+
   .hero-title {
     font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .hero-description {
     font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modules-section,
+  .features-section,
+  .benefits-section,
+  .use-cases-section {
+    padding: 60px 0;
   }
 
   .section-title {
     font-size: 1.875rem;
+    margin-bottom: 40px;
   }
 
   .modules-grid,
@@ -292,14 +325,170 @@
   .benefits-grid,
   .use-cases-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .hero-cta {
-    flex-direction: column;
+  .module-card {
+    padding: 20px 24px;
+  }
+
+  .module-icon {
+    font-size: 2.25rem;
+  }
+
+  .module-name {
+    font-size: 1rem;
+  }
+
+  .feature-card,
+  .benefit-card {
+    padding: 30px 24px;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .feature-card h3,
+  .benefit-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .benefit-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.375rem;
+  }
+
+  .use-case-card {
+    padding: 20px 24px;
+  }
+
+  .use-case-icon {
+    font-size: 2.25rem;
+  }
+
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-card h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .cta-card p {
+    font-size: 1.125rem;
+    margin-bottom: 32px;
   }
 
   .btn-primary-large,
   .btn-outline-large {
     width: 100%;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-hero {
+    padding: 60px 0 40px;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .hero-title {
+    font-size: 1.625rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .modules-section,
+  .features-section,
+  .benefits-section,
+  .use-cases-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .module-card {
+    padding: 18px 20px;
+  }
+
+  .module-icon {
+    font-size: 2rem;
+  }
+
+  .module-name {
+    font-size: 0.95rem;
+  }
+
+  .feature-card,
+  .benefit-card {
+    padding: 24px 20px;
+  }
+
+  .feature-icon {
+    font-size: 2.25rem;
+    margin-bottom: 16px;
+  }
+
+  .feature-card h3,
+  .benefit-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .feature-card p,
+  .benefit-card p {
+    font-size: 0.9rem;
+  }
+
+  .benefit-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  .use-case-card {
+    padding: 18px 20px;
+  }
+
+  .use-case-icon {
+    font-size: 2rem;
+  }
+
+  .use-case-title {
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    padding: 60px 0;
+  }
+
+  .cta-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-card p {
+    font-size: 1rem;
+  }
+
+  .btn-primary-large,
+  .btn-outline-large {
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
 }
