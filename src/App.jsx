@@ -7,12 +7,14 @@ import Pricing from './components/Pricing/Pricing';
 import PricingPage from './pages/PricingPage';
 import VAsProductPage from './pages/VAsProductPage';
 import BusinessManagementPage from './pages/BusinessManagementPage';
+import FeaturesPage from './pages/FeaturesPage';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/tinh-nang" element={<FeaturesPage />} />
         <Route path="/dang-nhap" element={<AuthPage />} />
         <Route path="/bao-gia" element={<PricingPage />} />
         <Route path="/lien-he" element={<ContactPage />} />

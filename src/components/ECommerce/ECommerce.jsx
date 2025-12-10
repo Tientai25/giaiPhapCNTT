@@ -3,67 +3,36 @@ import './ECommerce.css';
 function ECommerce() {
   const features = [
     {
-      icon: '🛒',
-      title: 'Website TMĐT chuyên nghiệp',
-      description: 'Xây dựng cửa hàng online đẹp mắt, dễ sử dụng, tối ưu chuyển đổi'
+      icon: '✍️',
+      title: 'Chữ ký số',
+      description: 'Hỗ trợ tất cả các loại chữ ký số của tất cả các tổ chức cấp chứng thư số tại Việt Nam'
     },
     {
-      icon: '📦',
-      title: 'Quản lý sản phẩm – tồn kho',
-      description: 'Theo dõi sản phẩm, danh mục, biến thể và tồn kho theo thời gian thực'
+      icon: '👤',
+      title: 'Định danh trực tuyến',
+      description: 'Cung cấp các giải pháp eKYC và Video KYC cho phép xác định khách hàng trực tuyến'
     },
     {
-      icon: '💳',
-      title: 'Thanh toán đa dạng',
-      description: 'QR Code, ví điện tử, ngân hàng, COD – tất cả trong một hệ thống'
-    },
-    {
-      icon: '🚚',
-      title: 'Quản lý đơn hàng – vận chuyển',
-      description: 'Tự động hóa quy trình từ đặt hàng đến giao hàng và đối soát'
-    },
-    {
-      icon: '📊',
-      title: 'Dashboard báo cáo',
-      description: 'Theo dõi doanh thu, đơn hàng, khách hàng theo thời gian thực'
-    },
-    {
-      icon: '🎯',
-      title: 'Marketing tích hợp',
-      description: 'Mã giảm giá, điểm thưởng, email marketing, remarketing'
+      icon: '💬',
+      title: 'Thương thảo trực tuyến',
+      description: 'Các bên liên quan có thể thảo luận, theo dõi tất cả các thay đổi, đàm phán và điều chỉnh hợp đồng trực tuyến'
     },
     {
       icon: '🔒',
-      title: 'Bảo mật chuẩn doanh nghiệp',
-      description: 'SSL, mã hóa dữ liệu, tuân thủ PCI DSS cho thanh toán'
-    },
-    {
-      icon: '📱',
-      title: 'Đa nền tảng',
-      description: 'Responsive hoàn hảo trên mọi thiết bị: desktop, tablet, mobile'
+      title: 'Bảo mật',
+      description: 'Chỉ các bên tham gia trong hợp đồng mới có thể truy cập thông tin hợp đồng của họ'
     }
-  ];
-
-  const benefits = [
-    'Tối ưu hóa quy trình bán hàng online',
-    'Tăng tỉ lệ chuyển đổi nhờ trải nghiệm mượt mà',
-    'Tiết kiệm chi phí vận hành và nhân sự',
-    'Dễ dàng mở rộng khi quy mô phát triển',
-    'Tích hợp đầy đủ công cụ marketing'
   ];
 
   return (
     <section id="ecommerce" className="ecommerce-section">
       <div className="container">
         <div className="section-header">
-          <span className="section-badge">Sản phẩm nổi bật</span>
           <h2 className="section-title">
-            VAS – Hệ Thống Thương Mại Điện Tử<br />
-            & Thanh Toán Thông Minh
+            Tính năng chính
           </h2>
           <p className="section-description">
-            Nền tảng giúp doanh nghiệp xây dựng và vận hành hệ thống TMĐT một cách dễ dàng, 
-            tối ưu trải nghiệm người dùng và tích hợp đầy đủ các phương thức thanh toán hiện đại.
+            Quản lý & ký kết hợp đồng điện tử cho các bên tham gia mọi lúc, mọi nơi
           </p>
         </div>
 
@@ -77,21 +46,8 @@ function ECommerce() {
           ))}
         </div>
 
-        <div className="benefits-section">
-          <h3 className="benefits-title">Lợi ích cho doanh nghiệp</h3>
-          <ul className="benefits-list">
-            {benefits.map((benefit, index) => (
-              <li key={index} className="benefit-item">
-                <span className="benefit-check">✓</span>
-                {benefit}
-              </li>
-            ))}
-          </ul>
-        </div>
-
         <div className="cta-section">
-          <button className="btn-primary-large">Tìm hiểu thêm về VAS</button>
-          <button className="btn-outline-large">Đăng ký dùng thử</button>
+          <a href="#feature" className="explore-link">Khám phá tất cả tính năng</a>
         </div>
       </div>
     </section>

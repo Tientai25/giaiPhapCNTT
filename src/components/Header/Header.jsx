@@ -44,33 +44,17 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="logo" role="button" tabIndex={0} onClick={() => navigate('/')} onKeyDown={(e) => e.key === 'Enter' && navigate('/')}>
-          <h2>TDT Solutions</h2>
+          <h2>TDT eContract</h2>
         </div>
         <nav className="nav">
           <button type="button" onClick={() => navigate('/')}>
             Trang chủ
           </button>
-          <div 
-            className="nav-dropdown"
-            onMouseEnter={() => setProductMenuOpen(true)}
-            onMouseLeave={() => setProductMenuOpen(false)}
-          >
-            <button type="button">
-              Sản phẩm ▾
-            </button>
-            {productMenuOpen && (
-              <div className="dropdown-menu">
-                <button type="button" onClick={() => handleProductClick('/san-pham/vas-thuong-mai-dien-tu')}>
-                  🛒 VAS - TMĐT & Thanh Toán
-                </button>
-                <button type="button" onClick={() => handleProductClick('/san-pham/quan-ly-doanh-nghiep')}>
-                  📊 Quản Lý Doanh Nghiệp
-                </button>
-              </div>
-            )}
-          </div>
+          <button type="button" onClick={() => navigate('/tinh-nang')}>
+            Tính năng
+          </button>
           <button type="button" onClick={() => handleNavClick('pricing')}>
-            Báo giá
+            Bảng giá
           </button>
           <button type="button" onClick={() => handleNavClick('contact')}>
             Liên hệ
@@ -81,7 +65,7 @@ function Header() {
             Đăng nhập
           </button>
           <button type="button" className="btn-primary" onClick={() => navigate('/lien-he')}>
-            Dùng thử miễn phí
+            Đăng ký dùng thử
           </button>
         </div>
 
@@ -104,17 +88,11 @@ function Header() {
           <button type="button" onClick={() => { navigate('/'); setMobileMenuOpen(false); }}>
             Trang chủ
           </button>
-          <div className="mobile-submenu">
-            <div className="mobile-submenu-title">Sản phẩm</div>
-            <button type="button" onClick={() => handleProductClick('/san-pham/vas-thuong-mai-dien-tu')}>
-              🛒 VAS - TMĐT & Thanh Toán
-            </button>
-            <button type="button" onClick={() => handleProductClick('/san-pham/quan-ly-doanh-nghiep')}>
-              📊 Quản Lý Doanh Nghiệp
-            </button>
-          </div>
+          <button type="button" onClick={() => { navigate('/tinh-nang'); setMobileMenuOpen(false); }}>
+            Tính năng
+          </button>
           <button type="button" onClick={() => handleNavClick('pricing')}>
-            Báo giá
+            Bảng giá
           </button>
           <button type="button" onClick={() => handleNavClick('contact')}>
             Liên hệ
@@ -124,7 +102,7 @@ function Header() {
             Đăng nhập
           </button>
           <button type="button" className="mobile-btn-primary" onClick={() => { navigate('/lien-he'); setMobileMenuOpen(false); }}>
-            Dùng thử miễn phí
+            Đăng ký dùng thử
           </button>
         </nav>
       )}

@@ -1,40 +1,64 @@
 import './Customers.css';
 
 function Customers() {
-  const customers = [
+  const ecosystemProducts = [
     {
-      name: 'VMG Media',
-      description: 'Số hóa toàn bộ quy trình ký kết, giảm mạnh thời gian xử lý hợp đồng.'
+      name: 'TDT eContract',
+      icon: '📝',
+      description: 'Giải pháp hợp đồng điện tử chính xác cao để số hóa trải nghiệm khách hàng'
     },
     {
-      name: 'Gtel',
-      description: 'Ứng dụng ký số và hợp đồng điện tử cho quản trị nội bộ & đối tác.'
+      name: 'TDT ASME',
+      icon: '🏢',
+      description: 'Giải pháp quản lý doanh nghiệp toàn diện cho SME'
     },
     {
-      name: 'BIDV',
-      description: 'Ký số cho tài liệu nghiệp vụ, biểu mẫu, quy trình phê duyệt nội bộ.'
+      name: 'TDT eKYC',
+      icon: '🆔',
+      description: 'Giải pháp định danh điện tử và xác thực khách hàng trực tuyến'
     },
     {
-      name: 'CMC',
-      description: 'Tích hợp ký số vào hệ thống quản trị giúp tối ưu vận hành và phê duyệt.'
+      name: 'TDT iOffice',
+      icon: '📄',
+      description: 'Hệ thống quản lý văn bản và điều hành doanh nghiệp'
+    },
+    {
+      name: 'TDT Invoice',
+      icon: '🧾',
+      description: 'Giải pháp hóa đơn điện tử cho doanh nghiệp'
+    },
+    {
+      name: 'SMS Brand Name',
+      icon: '📱',
+      description: 'Dịch vụ tin nhắn thương hiệu chuyên nghiệp'
+    },
+    {
+      name: 'TDT SmartCA',
+      icon: '🔐',
+      description: 'Chứng thư số và chữ ký số thông minh'
+    },
+    {
+      name: 'TDT PAY',
+      icon: '💳',
+      description: 'Giải pháp thanh toán điện tử toàn diện'
     }
   ];
 
   return (
     <section className="customers">
       <div className="customers-container">
-        <h2 className="section-title">Khách hàng tiêu biểu</h2>
+        <h2 className="section-title">Hệ sinh thái TDT</h2>
         <p className="section-subtitle">
-          Những doanh nghiệp lớn tin tưởng lựa chọn TDT
+          TDT eContract là một giải pháp hệ sinh thái toàn diện cho khách hàng doanh nghiệp từ SME đến SOE
         </p>
         <div className="customers-grid">
-          {customers.map((customer, index) => (
+          {ecosystemProducts.map((product, index) => (
             <div key={index} className="customer-card">
               <div className="customer-logo">
-                <div className="logo-placeholder">{customer.name.charAt(0)}</div>
+                <div className="logo-placeholder">{product.icon}</div>
               </div>
-              <h3 className="customer-name">{customer.name}</h3>
-              <p className="customer-description">{customer.description}</p>
+              <h3 className="customer-name">{product.name}</h3>
+              <p className="customer-description">{product.description}</p>
             </div>
           ))}
         </div>

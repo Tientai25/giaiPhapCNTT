@@ -1,12 +1,15 @@
 .customers {
-  padding: 5rem 2rem;
+  padding: 4rem 1rem;
   background: #f8fafc;
+  width: 100%;
 }
 
 .customers-container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  padding: 0 1rem;
 }
 
 .customers .section-subtitle {
@@ -17,21 +20,41 @@
 
 .customers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .customer-card {
   background: white;
   padding: 2.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-  transition: all 0.3s;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.customer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.customer-card:hover::before {
+  transform: scaleX(1);
 }
 
 .customer-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
 }
 
 .customer-logo {
@@ -39,17 +62,24 @@
 }
 
 .logo-placeholder {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   margin: 0 auto;
-  border-radius: 12px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.customer-card:hover .logo-placeholder {
+  transform: scale(1.05) rotate(-3deg);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .customer-name {

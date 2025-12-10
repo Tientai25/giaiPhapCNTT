@@ -3,36 +3,34 @@ import './Benefits.css';
 function Benefits() {
   const benefits = [
     {
-      icon: '⏱️',
-      title: 'Rút ngắn 90% thời gian ký kết',
-      description: 'Không còn chờ chuyển phát, không cần gặp mặt trực tiếp.'
-    },
-    {
       icon: '💰',
-      title: 'Tiết kiệm đến 70% chi phí vận hành',
-      description: 'Cắt giảm in ấn, giấy tờ, lưu trữ hồ sơ, chuyển phát nhanh.'
+      title: '50% Chi phí',
+      description: 'Tiết kiệm chi phí in ấn giấy tờ hợp đồng. Chi phí đi lại, lưu trú để gặp mặt trực tiếp ký kết và thương thảo hợp đồng.'
     },
     {
-      icon: '📱',
-      title: 'Ký mọi lúc, mọi nơi',
-      description: 'Hỗ trợ ký trên web và điện thoại, tiện lợi cho mọi bộ phận.'
+      icon: '⏱️',
+      title: '30% Thời gian',
+      description: 'Thông báo sẽ ngay lập tức được gửi đến các bên liên quan để thực thi hợp đồng. Tiết kiệm thời gian ký kết hợp đồng.'
     },
     {
-      icon: '📊',
-      title: 'Theo dõi trạng thái hợp đồng theo thời gian thực',
-      description: 'Biết ngay khi đối tác mở, xem, ký hoặc từ chối.'
+      icon: '👥',
+      title: '40% Nguồn lực',
+      description: 'Tiết kiệm nguồn nhân lực như kiểm soát con người, quản lý đồng thời tăng năng suất của đội ngũ bán hàng.'
     },
     {
-      icon: '🔒',
-      title: 'Tuân thủ pháp lý – an toàn tuyệt đối',
-      description: 'Đáp ứng tiêu chuẩn Nghị định 130, Thông tư 06 và các quy định pháp luật Việt Nam.'
+      icon: '✨',
+      title: '100% Minh bạch',
+      description: 'Minh bạch trong quá trình đàm phán, ký kết, quản lý dịch vụ kinh doanh.'
     }
   ];
 
   return (
     <section className="benefits">
       <div className="benefits-container">
-        <h2 className="section-title">Lợi ích khi chuyển sang Hợp đồng điện tử</h2>
+        <div className="benefits-header">
+          <h2 className="section-title">Lợi ích</h2>
+          <p className="section-subtitle">TDT eContract giúp doanh nghiệp làm việc <strong>tiết kiệm, hiệu quả</strong> và <strong>minh bạch</strong></p>
+        </div>
         <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <div key={index} className="benefit-card">
@@ -42,6 +40,7 @@ function Benefits() {
             </div>
           ))}
         </div>
+        <p className="section-footer">Chúng tôi được tin tưởng bởi hơn 1.000 đối tác hàng đầu</p>
       </div>
     </section>
   );

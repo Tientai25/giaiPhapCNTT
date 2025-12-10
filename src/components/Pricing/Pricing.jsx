@@ -8,50 +8,50 @@ function Pricing() {
 
   const vasPlans = [
     {
-      name: 'Gói Khởi Động',
-      price: isAnnual ? '1.990.000đ/tháng' : '2.490.000đ/tháng',
-      monthlyPrice: '2.490.000đ/tháng',
-      annualPrice: '1.990.000đ/tháng',
+      name: 'Gói Cơ bản',
+      price: isAnnual ? '990.000đ/tháng' : '1.190.000đ/tháng',
+      monthlyPrice: '1.190.000đ/tháng',
+      annualPrice: '990.000đ/tháng',
       savings: isAnnual ? '20% tiết kiệm' : '',
       features: [
-        'Website TMĐT cơ bản',
-        'Tối đa 500 sản phẩm',
-        'Thanh toán: QR, COD',
-        'Quản lý đơn hàng',
-        '10GB lưu trữ',
+        'Hợp đồng điện tử cơ bản',
+        'Tối đa 50 hợp đồng/tháng',
+        'Chữ ký số cơ bản',
+        'Lưu trữ hợp đồng',
+        '5GB lưu trữ',
         'Hỗ trợ email'
       ],
       popular: false,
-      cta: 'Dùng thử 14 ngày'
+      cta: 'Dùng thử miễn phí'
     },
     {
-      name: 'Gói Chuyên Nghiệp',
-      price: isAnnual ? '3.990.000đ/tháng' : '4.990.000đ/tháng',
-      monthlyPrice: '4.990.000đ/tháng',
-      annualPrice: '3.990.000đ/tháng',
+      name: 'Gói Chuyên nghiệp',
+      price: isAnnual ? '2.490.000đ/tháng' : '2.990.000đ/tháng',
+      monthlyPrice: '2.990.000đ/tháng',
+      annualPrice: '2.490.000đ/tháng',
       savings: isAnnual ? '20% tiết kiệm' : '',
       features: [
-        'Website TMĐT nâng cao',
-        'Không giới hạn sản phẩm',
-        'Thanh toán: Tất cả phương thức',
-        'Marketing tích hợp',
+        'Không giới hạn hợp đồng',
+        'Chữ ký số nâng cao',
+        'Thương thảo trực tuyến',
+        'eKYC/Video KYC',
         'Dashboard báo cáo',
         '50GB lưu trữ',
         'Hỗ trợ ưu tiên'
       ],
       popular: true,
-      cta: 'Dùng thử 14 ngày'
+      cta: 'Dùng thử miễn phí'
     },
     {
-      name: 'Gói Doanh Nghiệp',
+      name: 'Gói Doanh nghiệp',
       price: 'Liên hệ',
       monthlyPrice: 'Liên hệ',
       annualPrice: 'Liên hệ',
       features: [
         'Tùy chỉnh toàn diện',
-        'Không giới hạn mọi thứ',
         'API tích hợp',
-        'Multi-store',
+        'Blockchain verification',
+        'Multi-organization',
         'Lưu trữ không giới hạn',
         'Hỗ trợ 24/7',
         'SLA cam kết'
@@ -121,15 +121,15 @@ function Pricing() {
   const faqs = [
     {
       question: 'Có thể dùng thử trước khi quyết định không?',
-      answer: 'Có, tất cả các gói (trừ gói Doanh Nghiệp) đều có 14 ngày dùng thử miễn phí. Không cần thẻ tín dụng khi đăng ký.'
+      answer: 'Có, tất cả các gói đều có thể dùng thử miễn phí. Bạn có thể trải nghiệm đầy đủ tính năng trước khi quyết định.'
     },
     {
-      question: 'Có thể nâng cấp hoặc hạ cấp gói bất kỳ lúc nào không?',
-      answer: 'Có, bạn có thể thay đổi gói bất kỳ lúc nào. Chúng tôi sẽ tính toán theo tỉ lệ cho các ngày còn lại trong tháng.'
+      question: 'TDT eContract có tuân thủ pháp luật Việt Nam không?',
+      answer: 'Có, TDT eContract đáp ứng đầy đủ các điều kiện và nguyên tắc của Luật Giao dịch Điện tử Việt Nam, bao gồm Điều 34 và Điều 14 của Luật Giao dịch Điện tử 2005.'
     },
     {
       question: 'Có hỗ trợ triển khai và đào tạo không?',
-      answer: 'Gói Chuyên Nghiệp có tài liệu hướng dẫn chi tiết. Gói Doanh Nghiệp bao gồm training trực tiếp và hỗ trợ onboarding.'
+      answer: 'Có, chúng tôi cung cấp tài liệu hướng dẫn chi tiết và hỗ trợ kỹ thuật. Gói Doanh nghiệp bao gồm training trực tiếp và hỗ trợ triển khai.'
     },
     {
       question: 'Thanh toán hàng năm có được giảm giá không?',
@@ -141,8 +141,8 @@ function Pricing() {
     <section id="pricing" className="pricing">
       <div className="pricing-container">
         <div className="pricing-header">
-          <h2 className="section-title">Bảng Giá</h2>
-          <p className="section-subtitle">Chọn sản phẩm và gói phù hợp với doanh nghiệp của bạn</p>
+          <h2 className="section-title">Bảng Giá TDT eContract</h2>
+          <p className="section-subtitle">Chọn gói phù hợp với nhu cầu hợp đồng điện tử của doanh nghiệp bạn</p>
         </div>
 
         {/* Product Tabs */}
@@ -151,13 +151,7 @@ function Pricing() {
             className={`tab-btn ${activeProduct === 'vas' ? 'active' : ''}`}
             onClick={() => setActiveProduct('vas')}
           >
-            🛒 VAS - TMĐT & Thanh Toán
-          </button>
-          <button 
-            className={`tab-btn ${activeProduct === 'business' ? 'active' : ''}`}
-            onClick={() => setActiveProduct('business')}
-          >
-            📊 Quản Lý Doanh Nghiệp
+            📝 TDT eContract
           </button>
         </div>
 

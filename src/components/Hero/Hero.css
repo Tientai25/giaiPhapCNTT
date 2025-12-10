@@ -1,24 +1,58 @@
 .hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 8rem 2rem 4rem;
-  margin-top: 80px;
-  min-height: 600px;
+  padding: 6rem 1rem 3rem;
+  margin-top: 70px;
+  min-height: 500px;
   display: flex;
   align-items: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .hero-container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
 }
 
 .hero-content {
   animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .hero-title {
@@ -30,15 +64,62 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   opacity: 0.95;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
-.hero-description {
+.hero-download {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+.download-text {
   font-size: 1.1rem;
-  margin-bottom: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.download-subtext {
+  font-size: 0.95rem;
   opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.app-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.app-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.app-btn {
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .hero-cta {
@@ -52,35 +133,76 @@
   background: white;
   color: #667eea;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-large::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary-large:hover::before {
+  left: 100%;
 }
 
 .btn-primary-large:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .btn-outline-large {
   padding: 1rem 2.5rem;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   color: white;
   border: 2px solid white;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline-large::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: white;
+  transition: width 0.3s ease;
+  z-index: 0;
+}
+
+.btn-outline-large span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline-large:hover::before {
+  width: 100%;
 }
 
 .btn-outline-large:hover {
-  background: white;
   color: #667eea;
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 .hero-image {
@@ -173,12 +295,16 @@
   .hero-image {
     display: none;
   }
+  
+  .app-buttons {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 1rem 3rem;
-    min-height: 500px;
+    padding: 5rem 1rem 3rem;
+    min-height: auto;
   }
   
   .hero-title {
@@ -194,8 +320,16 @@
     width: 100%;
   }
   
-  .btn-primary-large,
-  .btn-outline-large {
+  .btn-primary-large {
+    width: 100%;
+  }
+  
+  .app-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .app-btn {
     width: 100%;
   }
 }

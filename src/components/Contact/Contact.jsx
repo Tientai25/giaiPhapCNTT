@@ -35,9 +35,9 @@ function Contact() {
     <section id="contact" className="contact">
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="section-title">Nhận tư vấn miễn phí</h2>
+          <h2 className="section-title">Liên hệ với chúng tôi</h2>
           <p className="section-subtitle">
-            Trải nghiệm hệ thống ký số ngay hôm nay
+            Trải nghiệm TDT eContract ngay hôm nay - Ký hợp đồng mọi lúc, mọi nơi
           </p>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>

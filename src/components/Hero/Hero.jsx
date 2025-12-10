@@ -5,19 +5,25 @@ function Hero() {
     <section id="home" className="hero">
       <div className="hero-container">
         <div className="hero-content">
+          <p className="hero-badge">SẢN PHẨM CỦA</p>
           <h1 className="hero-title">
-            Giải Pháp Chuyển Đổi Số<br />
-            Toàn Diện Cho Doanh Nghiệp
+            Hợp Đồng Điện Tử<br />
+            TDT eContract
           </h1>
           <p className="hero-subtitle">
-            Hệ thống Thương mại điện tử & Phần mềm Quản lý – Tối ưu hiệu suất, tiết kiệm chi phí
-          </p>
-          <p className="hero-description">
-            Từ bán hàng online đến quản trị doanh nghiệp, chúng tôi có giải pháp phù hợp cho mọi quy mô SME.
+            Cung cấp giải pháp hợp đồng điện tử cho phép các bên ký kết hợp đồng một cách điện tử
           </p>
           <div className="hero-cta">
             <button className="btn-primary-large">Dùng thử miễn phí</button>
-            <button className="btn-outline-large">Nhận tư vấn giải pháp</button>
+          </div>
+          <div className="hero-download">
+            <p className="download-text">Tải ứng dụng TDT eContract miễn phí ngay bây giờ!</p>
+            <p className="download-subtext">Để ký hợp đồng mọi lúc, mọi nơi</p>
+            <div className="app-buttons">
+              <span className="app-label">eContract V1</span>
+              <button className="app-btn">👍 iOS</button>
+              <button className="app-btn">👍 Android</button>
+            </div>
           </div>
         </div>
         <div className="hero-image">

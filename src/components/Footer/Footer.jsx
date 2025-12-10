@@ -9,55 +9,55 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">TDT Solutions</h3>
+            <h3 className="footer-title">TDT Vinaphone</h3>
             <p className="footer-text">
-              Giải pháp chuyển đổi số toàn diện cho doanh nghiệp Việt Nam.
-              Từ thương mại điện tử đến quản lý doanh nghiệp.
+              Tổng Công ty Dịch vụ Viễn thông
+            </p>
+            <p className="footer-text">
+              Trụ sở:  Quận Đống Đa, Thành phố Hà Nội
             </p>
             <div className="footer-keywords">
-              <span className="keyword-tag">Phần mềm TMĐT</span>
-              <span className="keyword-tag">Quản lý doanh nghiệp</span>
-              <span className="keyword-tag">Chuyển đổi số</span>
+              <span className="keyword-tag">Hợp đồng điện tử</span>
+              <span className="keyword-tag">Chữ ký số</span>
+              <span className="keyword-tag">eContract</span>
             </div>
           </div>
           
           <div className="footer-section">
-            <h3 className="footer-title">Sản phẩm</h3>
+            <h3 className="footer-title">Chính sách</h3>
             <ul className="footer-links">
-              <li><a href="/san-pham/vas-thuong-mai-dien-tu" onClick={(e) => { e.preventDefault(); navigate('/san-pham/vas-thuong-mai-dien-tu'); }}>VAS - TMĐT & Thanh Toán</a></li>
-              <li><a href="/san-pham/quan-ly-doanh-nghiep" onClick={(e) => { e.preventDefault(); navigate('/san-pham/quan-ly-doanh-nghiep'); }}>Quản Lý Doanh Nghiệp</a></li>
-              <li><a href="/bao-gia" onClick={(e) => { e.preventDefault(); navigate('/bao-gia'); }}>Bảng giá</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-section">
-            <h3 className="footer-title">Hỗ trợ</h3>
-            <ul className="footer-links">
-              <li><a href="/lien-he" onClick={(e) => { e.preventDefault(); navigate('/lien-he'); }}>Liên hệ</a></li>
-              <li><a href="#">Tài liệu hướng dẫn</a></li>
-              <li><a href="#">Chính sách bảo mật</a></li>
               <li><a href="#">Điều khoản sử dụng</a></li>
+              <li><a href="#">Về chúng tôi</a></li>
+              <li><a href="#">Câu hỏi thường gặp</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <h3 className="footer-title">Liên hệ</h3>
+            <h3 className="footer-title">Kênh truyền thông</h3>
             <ul className="footer-contact">
-              <li>📞 Hotline: 1900 1234</li>
-              <li>📧 Email: info@tdt.edu.vn</li>
-              <li>📍 19 Nguyễn Hữu Thọ, Quận 7, TP.HCM</li>
+              <li>📞 Hotline: 18001260</li>
+              <li>📧 Email: cskh@TDT.vn</li>
+            </ul>
+          </div>
+
+          <div className="footer-section">
+            <h3 className="footer-title">Tải ứng dụng</h3>
+            <p className="footer-text">eContract V1</p>
+            <ul className="footer-links">
+              <li><a href="https://play.google.com/store/apps/details?id=vnpt.it3.econtract" target="_blank" rel="noopener noreferrer">📱 Android</a></li>
+              <li><a href="https://apps.apple.com/vn/app/econtract/id1583922938?l=vi" target="_blank" rel="noopener noreferrer">🍎 iOS</a></li>
             </ul>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2025 TDT Solutions. All rights reserved.</p>
+          <p>&copy; TDT 2025. All Rights Reserved.</p>
           <div className="footer-seo">
-            <span>Phần mềm thương mại điện tử</span>
+            <span>Hợp đồng điện tử TDT</span>
             <span>•</span>
-            <span>Phần mềm quản lý doanh nghiệp</span>
+            <span>Chữ ký số</span>
             <span>•</span>
-            <span>Giải pháp TMĐT</span>
+            <span>eContract</span>
           </div>
         </div>
       </div>

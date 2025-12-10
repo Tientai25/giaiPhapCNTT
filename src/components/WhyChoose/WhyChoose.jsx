@@ -1,44 +1,35 @@
 import './WhyChoose.css';
 
 function WhyChoose() {
-  const reasons = [
+  const legalPoints = [
     {
-      icon: '🎯',
-      title: 'Giải pháp chuyên sâu vào ký số và hợp đồng điện tử',
-      description: 'Tập trung đúng nhu cầu thực tế của doanh nghiệp.'
+      icon: '📜',
+      title: 'Luật Giao dịch Điện tử 2005 - Điều 34',
+      description: 'Giá trị pháp lý của một hợp đồng điện tử cụ thể được công nhận: "Giá trị pháp lý của hợp đồng điện tử không thể bị phủ nhận chỉ vì nó được thể hiện dưới dạng thông điệp dữ liệu"'
     },
     {
-      icon: '🔒',
-      title: 'Bảo mật cao – công nghệ hiện đại',
-      description: 'Hệ thống an toàn, mã hóa toàn diện, log mọi thao tác.'
+      icon: '✅',
+      title: 'Luật Giao dịch Điện tử 2005 - Điều 14',
+      description: 'Quy định: "Thông điệp dữ liệu không được phủ nhận giá trị làm chứng cứ chỉ vì nó là thông điệp dữ liệu"'
     },
     {
-      icon: '🔌',
-      title: 'Tích hợp đa nền tảng',
-      description: 'Kết nối nhanh với ERP, CRM, website, mobile app.'
-    },
-    {
-      icon: '⚡',
-      title: 'Tối ưu quy trình vận hành',
-      description: 'Rút ngắn thời gian xử lý, tăng năng suất bộ phận.'
-    },
-    {
-      icon: '👨‍💼',
-      title: 'Đội ngũ triển khai có kinh nghiệm',
-      description: 'Hỗ trợ 24/7, bám sát nghiệp vụ, đảm bảo vận hành ổn định.'
+      icon: '⚖️',
+      title: 'Tuân thủ đầy đủ pháp luật Việt Nam',
+      description: 'TDT eContract đáp ứng đầy đủ các điều kiện và nguyên tắc của Luật Giao dịch Điện tử Việt Nam'
     }
   ];
 
   return (
     <section className="why-choose">
       <div className="why-choose-container">
-        <h2 className="section-title">Vì sao doanh nghiệp chọn TDT eContract & eSign?</h2>
+        <h2 className="section-title">Cơ sở pháp lý</h2>
+        <p className="section-subtitle">TDT eContract đáp ứng đầy đủ các điều kiện và nguyên tắc của Luật Giao dịch Điện tử Việt Nam</p>
         <div className="reasons-grid">
-          {reasons.map((reason, index) => (
+          {legalPoints.map((point, index) => (
             <div key={index} className="reason-card">
-              <div className="reason-icon">{reason.icon}</div>
-              <h3 className="reason-title">{reason.title}</h3>
-              <p className="reason-description">{reason.description}</p>
+              <div className="reason-icon">{point.icon}</div>
+              <h3 className="reason-title">{point.title}</h3>
+              <p className="reason-description">{point.description}</p>
             </div>
           ))}
         </div>

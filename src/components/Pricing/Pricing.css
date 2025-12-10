@@ -1,9 +1,10 @@
 .pricing {
   /* add top offset so content sits below fixed header */
   background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 50%, #f0f4ff 100%);
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .pricing::before {
