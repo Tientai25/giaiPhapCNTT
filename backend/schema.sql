@@ -1,5 +1,6 @@
--- TDT eContract & eSign Database Schema
+-- TDT eContract - Hợp Đồng Điện Tử Database Schema
 -- Created: December 2025
+-- Giải pháp hợp đồng điện tử toàn diện cho doanh nghiệp
 
 -- Database Creation
 CREATE DATABASE IF NOT EXISTS tdt_econtract CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -276,27 +277,35 @@ INSERT INTO system_settings (setting_key, setting_value, description) VALUES
 ('session_timeout_minutes', '60', 'User session timeout in minutes');
 
 -- Create Views for common queries
-CREATE VIEW active_contracts AS
+CREATE OR REPLACE VIEW active_contracts AS
 SELECT 
     c.*,
-    u.full_name as creator_name,
-    u.email as creator_email,
-    COUNT(cs.signer_id) as total_signers,
-    SUM(CASE WHEN cs.status = 'signed' THEN 1 ELSE 0 END) as signed_count
+    u.full_name AS creator_name,
+    u.email AS creator_email,
+    s.total_signers AS signer_total,
+    s.signed_count AS signer_signed_total
 FROM contracts c
 LEFT JOIN users u ON c.created_by = u.user_id
-LEFT JOIN contract_signers cs ON c.contract_id = cs.contract_id
-WHERE c.status IN ('pending', 'signed')
-GROUP BY c.contract_id;
+LEFT JOIN (
+    SELECT 
+        contract_id,
+        COUNT(*) AS total_signers,
+        SUM(CASE WHEN status = 'signed' THEN 1 ELSE 0 END) AS signed_count
+    FROM contract_signers
+    GROUP BY contract_id
+) s ON c.contract_id = s.contract_id
+WHERE c.status IN ('pending', 'signed');
 
-CREATE VIEW user_contract_summary AS
+
+CREATE OR REPLACE VIEW user_contract_summary AS
 SELECT 
     u.user_id,
-    u.full_name,
-    u.email,
-    COUNT(DISTINCT c.contract_id) as total_contracts,
-    SUM(CASE WHEN c.status = 'completed' THEN 1 ELSE 0 END) as completed_contracts,
-    SUM(CASE WHEN c.status = 'pending' THEN 1 ELSE 0 END) as pending_contracts
+    MIN(u.full_name) AS full_name,
+    MIN(u.email) AS email,
+    COUNT(DISTINCT c.contract_id) AS total_contracts,
+    SUM(CASE WHEN c.status = 'completed' THEN 1 ELSE 0 END) AS completed_contracts,
+    SUM(CASE WHEN c.status = 'pending' THEN 1 ELSE 0 END) AS pending_contracts
 FROM users u
 LEFT JOIN contracts c ON u.user_id = c.created_by
 GROUP BY u.user_id;
+

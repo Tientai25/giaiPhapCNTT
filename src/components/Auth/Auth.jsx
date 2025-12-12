@@ -50,17 +50,43 @@ function Auth() {
       return;
     }
     
-    // Simulate API call
-    setTimeout(() => {
-      setMessage('Đăng nhập thành công! Đang chuyển hướng...');
-      setLoginData(initialLogin);
+    try {
+      const response = await fetch('http://localhost:3000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: loginData.email,
+          password: loginData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        // Save token to localStorage
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('user', JSON.stringify(data.user));
+        }
+        
+        setMessage('Đăng nhập thành công! Đang chuyển hướng...');
+        setLoginData(initialLogin);
+        
+        // Redirect to home after successful login
+        setTimeout(() => {
+          navigate('/');
+        }, 1500);
+      } else {
+        setMessage(data.message || 'Email hoặc mật khẩu không đúng.');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      setMessage('Không thể kết nối đến server. Vui lòng kiểm tra backend đang chạy.');
+    } finally {
       setIsLoading(false);
-      
-      // Redirect to home after successful login
-      setTimeout(() => {
-        navigate('/');
-      }, 1500);
-    }, 1000);
+    }
   };
 
   const handleRegisterSubmit = async (e) => {
@@ -86,18 +112,41 @@ function Auth() {
       return;
     }
     
-    // Simulate API call
-    setTimeout(() => {
-      setMessage('Đăng ký thành công! Chúng tôi sẽ liên hệ sớm nhất.');
-      setRegisterData(initialRegister);
+    try {
+      const response = await fetch('http://localhost:3000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          full_name: registerData.fullName,
+          company: registerData.company,
+          email: registerData.email,
+          phone: registerData.phone,
+          password: registerData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setMessage('Đăng ký thành công! Chúng tôi sẽ liên hệ sớm nhất.');
+        setRegisterData(initialRegister);
+        
+        // Switch to login tab after successful registration
+        setTimeout(() => {
+          setActiveTab('login');
+          setMessage('Vui lòng đăng nhập với tài khoản vừa tạo.');
+        }, 2000);
+      } else {
+        setMessage(data.message || 'Đăng ký thất bại. Vui lòng thử lại.');
+      }
+    } catch (error) {
+      console.error('Register error:', error);
+      setMessage('Không thể kết nối đến server. Vui lòng kiểm tra backend đang chạy.');
+    } finally {
       setIsLoading(false);
-      
-      // Switch to login tab after successful registration
-      setTimeout(() => {
-        setActiveTab('login');
-        setMessage('Vui lòng đăng nhập với tài khoản vừa tạo.');
-      }, 2000);
-    }, 1000);
+    }
   };
 
   return (

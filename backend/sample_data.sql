@@ -1,19 +1,20 @@
--- Sample Data for Testing TDT eContract & eSign
+-- Sample Data for TDT eContract - Hợp Đồng Điện Tử
+-- Dữ liệu mẫu để test hệ thống
 USE tdt_econtract;
 
 -- Insert sample users
 INSERT INTO users (full_name, email, phone, company, password_hash, role, plan_type, email_verified) VALUES
-('Nguyễn Văn Admin', 'admin@tdt.edu.vn', '0901234567', 'TDT University', '$2b$10$hash1', 'admin', 'enterprise', TRUE),
-('Trần Thị Mai', 'mai.tran@company.vn', '0912345678', 'ABC Corporation', '$2b$10$hash2', 'user', 'pro', TRUE),
-('Lê Văn Bình', 'binh.le@startup.vn', '0923456789', 'Tech Startup', '$2b$10$hash3', 'user', 'pro', TRUE),
+('Nguyễn Văn Admin', 'admin@tdt.edu.vn', '0901234567', 'Trường Đại học Tôn Đức Thắng', '$2b$10$hash1', 'admin', 'enterprise', TRUE),
+('Trần Thị Mai', 'mai.tran@company.vn', '0912345678', 'Công ty TNHH ABC', '$2b$10$hash2', 'user', 'pro', TRUE),
+('Lê Văn Bình', 'binh.le@startup.vn', '0923456789', 'Tech Startup Vietnam', '$2b$10$hash3', 'user', 'pro', TRUE),
 ('Phạm Thị Lan', 'lan.pham@gmail.com', '0934567890', NULL, '$2b$10$hash4', 'user', 'free', TRUE),
-('Hoàng Văn Nam', 'nam.hoang@enterprise.vn', '0945678901', 'Enterprise Corp', '$2b$10$hash5', 'enterprise', 'enterprise', TRUE);
+('Hoàng Văn Nam', 'nam.hoang@enterprise.vn', '0945678901', 'Tập đoàn XYZ', '$2b$10$hash5', 'enterprise', 'enterprise', TRUE);
 
 -- Insert sample companies
 INSERT INTO companies (company_name, tax_code, address, phone, email, plan_type, contract_limit, storage_limit_gb) VALUES
-('TDT University', '0123456789', '19 Nguyen Huu Tho, Tan Phong, District 7, HCMC', '028-12345678', 'info@tdt.edu.vn', 'enterprise', NULL, 100),
-('ABC Corporation', '9876543210', '123 Le Loi, District 1, HCMC', '028-87654321', 'contact@abc.vn', 'pro', NULL, 50),
-('Tech Startup', '1122334455', '456 Nguyen Trai, District 5, HCMC', '028-11223344', 'info@techstartup.vn', 'pro', NULL, 50);
+('Trường Đại học Tôn Đức Thắng', '0123456789', '19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP.HCM', '028-37755037', 'info@tdtu.edu.vn', 'enterprise', NULL, 100),
+('Công ty TNHH ABC', '9876543210', '123 Lê Lợi, Quận 1, TP.HCM', '028-87654321', 'contact@abc.vn', 'pro', NULL, 50),
+('Tech Startup Vietnam', '1122334455', '456 Nguyễn Trãi, Quận 5, TP.HCM', '028-11223344', 'info@techstartup.vn', 'pro', NULL, 50);
 
 -- Link users to companies
 INSERT INTO user_companies (user_id, company_id, role_in_company) VALUES
@@ -80,19 +81,24 @@ INSERT INTO contract_history (contract_id, user_id, action, description, ip_addr
 
 -- Insert templates
 INSERT INTO templates (template_name, description, category, file_url, created_by, is_public, usage_count) VALUES
-('Hợp đồng thuê văn phòng', 'Mẫu hợp đồng thuê văn phòng chuẩn', 'Real Estate', '/templates/office-lease.pdf', 1, TRUE, 15),
-('Hợp đồng lao động', 'Mẫu hợp đồng lao động theo luật lao động VN', 'Employment', '/templates/employment.pdf', 1, TRUE, 32),
-('Thỏa thuận NDA', 'Thỏa thuận bảo mật thông tin', 'Legal', '/templates/nda.pdf', 2, TRUE, 8),
-('Hợp đồng cung cấp dịch vụ', 'Mẫu hợp đồng cung cấp dịch vụ IT', 'Services', '/templates/service.pdf', 2, FALSE, 5),
-('Hợp đồng mua bán', 'Mẫu hợp đồng mua bán hàng hóa', 'Sales', '/templates/sales.pdf', 1, TRUE, 20);
+('Hợp đồng thuê văn phòng', 'Mẫu hợp đồng thuê văn phòng chuẩn theo luật Việt Nam', 'Real Estate', '/templates/office-lease.pdf', 1, TRUE, 45),
+('Hợp đồng lao động', 'Mẫu hợp đồng lao động full-time theo Bộ luật Lao động 2019', 'Employment', '/templates/employment.pdf', 1, TRUE, 128),
+('Thỏa thuận bảo mật NDA', 'Thỏa thuận bảo mật thông tin và tài sản trí tuệ', 'Legal', '/templates/nda.pdf', 2, TRUE, 67),
+('Hợp đồng cung cấp dịch vụ IT', 'Mẫu hợp đồng cung cấp dịch vụ công nghệ thông tin', 'Services', '/templates/service-it.pdf', 2, TRUE, 89),
+('Hợp đồng mua bán hàng hóa', 'Mẫu hợp đồng mua bán hàng hóa theo Bộ luật Dân sự', 'Sales', '/templates/sales.pdf', 1, TRUE, 156),
+('Hợp đồng đối tác kinh doanh', 'Thỏa thuận hợp tác kinh doanh giữa các bên', 'Partnership', '/templates/partnership.pdf', 1, TRUE, 34),
+('Hợp đồng thuê nhà', 'Mẫu hợp đồng thuê nhà ở dân dụng', 'Real Estate', '/templates/house-lease.pdf', 1, TRUE, 203),
+('Hợp đồng cung cấp dịch vụ tư vấn', 'Hợp đồng tư vấn chuyên môn và quản lý dự án', 'Services', '/templates/consulting.pdf', 2, FALSE, 23);
 
 -- Insert notifications
 INSERT INTO notifications (user_id, type, title, message, link, is_read) VALUES
 (2, 'signature_request', 'Yêu cầu ký hợp đồng mới', 'Bạn có một hợp đồng mới cần ký: Hợp đồng thuê văn phòng 2024', '/contracts/1', TRUE),
-(3, 'signature_request', 'Yêu cầu ký hợp đồng', 'Hợp đồng cung cấp dịch vụ IT đang chờ chữ ký của bạn', '/contracts/2', FALSE),
-(2, 'contract_completed', 'Hợp đồng hoàn tất', 'Hợp đồng thuê văn phòng 2024 đã được ký đầy đủ', '/contracts/1', TRUE),
-(4, 'signature_request', 'Yêu cầu ký hợp đồng lao động', 'Hợp đồng lao động nhân viên cần chữ ký của bạn', '/contracts/5', TRUE),
-(1, 'system', 'Chào mừng đến với TDT eSign', 'Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi', '/', TRUE);
+(3, 'signature_request', 'Yêu cầu phê duyệt hợp đồng', 'Hợp đồng cung cấp dịch vụ IT đang chờ phê duyệt và chữ ký của bạn', '/contracts/2', FALSE),
+(2, 'contract_completed', 'Hợp đồng hoàn tất', 'Hợp đồng thuê văn phòng 2024 đã được tất cả các bên ký kết thành công', '/contracts/1', TRUE),
+(4, 'signature_request', 'Yêu cầu ký hợp đồng lao động', 'Hợp đồng lao động nhân viên cần xác nhận và chữ ký điện tử của bạn', '/contracts/5', TRUE),
+(1, 'system', 'Chào mừng đến với TDT eContract', 'Cảm ơn bạn đã tin tưởng sử dụng giải pháp hợp đồng điện tử TDT eContract', '/', TRUE),
+(3, 'reminder', 'Nhắc nhở ký hợp đồng', 'Hợp đồng mua bán phần mềm vẫn chưa được ký. Vui lòng xem xét và ký kết', '/contracts/3', FALSE),
+(2, 'contract_created', 'Hợp đồng mới được tạo', 'Thỏa thuận bảo mật NDA đã được tạo và gửi đến các bên liên quan', '/contracts/4', TRUE);
 
 -- Insert subscriptions
 INSERT INTO subscriptions (user_id, company_id, plan_type, billing_cycle, price, start_date, end_date, status) VALUES
