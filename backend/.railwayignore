@@ -1,0 +1,10 @@
+# Ignore frontend files when deploying backend
+src/
+public/
+index.html
+vite.config.js
+dist/
+node_modules/
+
+# Keep backend files
+!backend/

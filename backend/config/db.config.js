@@ -4,12 +4,13 @@
 const mysql = require('mysql2');
 
 // Database connection configuration
+// Support both Railway (MYSQL*) and custom environment variables
 const dbConfig = {
-  host: 'localhost',
-  port: 3306,
-  user: 'giaiphapcntt',
-  password: '0865798099',
-  database: 'tdt_econtract',
+  host: process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
+  port: process.env.MYSQLPORT || process.env.DB_PORT || 3306,
+  user: process.env.MYSQLUSER || process.env.DB_USER || 'giaiphapcntt',
+  password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '0865798099',
+  database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'tdt_econtract',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
