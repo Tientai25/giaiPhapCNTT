@@ -1,14 +1,14 @@
 # Nixpacks Configuration for Railway
-# Disable automatic Caddy installation
+# Deploy BACKEND ONLY - Frontend is on Vercel
 
 [phases.setup]
 nixPkgs = ["nodejs-18_x"]
 
 [phases.install]
-cmds = ["npm ci"]
+cmds = ["cd backend && npm ci"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["echo 'No build needed for backend'"]
 
 [start]
-cmd = "npm start"
+cmd = "cd backend && node server.js"
