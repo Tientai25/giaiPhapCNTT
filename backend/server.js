@@ -11,6 +11,10 @@ const templateRoutes = require('./routes/templateRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Log environment info
+console.log('🌍 Environment:', process.env.NODE_ENV || 'development');
+console.log('🚀 Starting server on port:', PORT);
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -68,8 +72,9 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ TDT eContract API Server running on port ${PORT}`);
   console.log(`📍 http://localhost:${PORT}`);
   console.log(`🏥 Health check: http://localhost:${PORT}/api/health`);
+  console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
 });

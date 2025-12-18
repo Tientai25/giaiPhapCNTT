@@ -1,43 +1,44 @@
 // Database Configuration for TDT eContract
-// MySQL Connection Settings
+// PostgreSQL Connection Settings
 
-const mysql = require('mysql2');
+const { Pool } = require('pg');
 
 // Database connection configuration
-// Support both Railway (MYSQL*) and custom environment variables
+// Support both Railway (POSTGRES*) and custom environment variables
 const dbConfig = {
-  host: process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
-  port: process.env.MYSQLPORT || process.env.DB_PORT || 3306,
-  user: process.env.MYSQLUSER || process.env.DB_USER || 'giaiphapcntt',
-  password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '0865798099',
-  database: process.env.MYSQLDATABASE || process.env.DB_NAME || 'tdt_econtract',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  enableKeepAlive: true,
-  keepAliveInitialDelay: 0
+  host: process.env.PGHOST || process.env.DB_HOST || 'localhost',
+  port: process.env.PGPORT || process.env.DB_PORT || 5432,
+  user: process.env.PGUSER || process.env.DB_USER || 'postgres',
+  password: process.env.PGPASSWORD || process.env.DB_PASSWORD || 'postgres',
+  database: process.env.PGDATABASE || process.env.DB_NAME || 'tdt_econtract',
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  max: 10, // Maximum number of clients in the pool
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000,
 };
 
 // Create connection pool
-const pool = mysql.createPool(dbConfig);
-
-// Create promise pool for async/await
-const promisePool = pool.promise();
+const pool = new Pool(dbConfig);
 
 // Test connection
-pool.getConnection((err, connection) => {
+pool.connect((err, client, release) => {
   if (err) {
-    console.error('❌ Error connecting to database:', err.message);
+    console.error('❌ Error connecting to PostgreSQL database:', err.message);
     return;
   }
-  console.log('✅ Successfully connected to TDT eContract database');
-  connection.release();
+  console.log('✅ Successfully connected to TDT eContract PostgreSQL database');
+  release();
 });
 
-// Export pool for use in other modules
+// Handle pool errors
+pool.on('error', (err) => {
+  console.error('❌ Unexpected error on idle PostgreSQL client', err);
+  process.exit(-1);
+});
+
+// Export pool and query functions
 module.exports = {
   pool,
-  promisePool,
-  query: (sql, params) => promisePool.query(sql, params),
-  execute: (sql, params) => promisePool.execute(sql, params)
+  query: (text, params) => pool.query(text, params),
+  getClient: () => pool.connect()
 };

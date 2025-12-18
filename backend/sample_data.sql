@@ -1,6 +1,5 @@
--- Sample Data for TDT eContract - Hợp Đồng Điện Tử
+-- Sample Data for TDT eContract - Hợp Đồng Điện Tử (PostgreSQL)
 -- Dữ liệu mẫu để test hệ thống
-USE tdt_econtract;
 
 -- Insert sample users
 INSERT INTO users (full_name, email, phone, company, password_hash, role, plan_type, email_verified) VALUES
@@ -127,3 +126,8 @@ INSERT INTO email_logs (contract_id, recipient_email, email_type, subject, statu
 (2, 'khach@client.vn', 'reminder', 'Nhắc nhở: Hợp đồng đang chờ chữ ký của bạn', 'sent', '2024-03-15 10:00:00'),
 (3, 'dung.vo@partner.vn', 'invitation', 'Yêu cầu ký hợp đồng: Hợp đồng mua bán phần mềm', 'sent', '2024-06-01 14:00:00'),
 (1, 'admin@tdt.edu.vn', 'completed', 'Hợp đồng đã hoàn tất: Hợp đồng thuê văn phòng 2024', 'sent', '2024-01-06 14:25:00');
+
+-- Reset sequences (optional - only if needed)
+-- SELECT setval('users_user_id_seq', (SELECT MAX(user_id) FROM users));
+-- SELECT setval('companies_company_id_seq', (SELECT MAX(company_id) FROM companies));
+-- SELECT setval('contracts_contract_id_seq', (SELECT MAX(contract_id) FROM contracts));
