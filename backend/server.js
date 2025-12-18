@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 const db = require('./config/db.config');
 
 // Import routes
@@ -15,8 +16,19 @@ const PORT = process.env.PORT || 3000;
 console.log('🌍 Environment:', process.env.NODE_ENV || 'development');
 console.log('🚀 Starting server on port:', PORT);
 
+// CORS Configuration
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || [
+    'http://localhost:5173', // Vite dev
+    'http://localhost:3000', // Local dev
+    'https://giai-phap-cntt.vercel.app', // Production frontend
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -32,7 +44,7 @@ app.get('/', (req, res) => {
 // Health check
 app.get('/api/health', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT 1 as result');
+    const result = await db.query('SELECT 1 as result');
     res.json({ 
       status: 'healthy',
       database: 'connected',
