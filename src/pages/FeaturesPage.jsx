@@ -149,6 +149,96 @@ function FeaturesPage() {
       ]
     },
     {
+      category: 'WAAP - Web Application & API Protection',
+      icon: '🛡️',
+      features: [
+        {
+          title: 'CDN toàn cầu',
+          description: '2800+ PoPs, 70+ quốc gia - Tăng tốc độ truy cập website'
+        },
+        {
+          title: 'DDoS Protection',
+          description: 'Bảo vệ chống tấn công từ chối dịch vụ phân tán'
+        },
+        {
+          title: 'WAF - Web Application Firewall',
+          description: 'Tường lửa ứng dụng web, chặn các cuộc tấn công web'
+        },
+        {
+          title: 'Bot Management',
+          description: 'Quản lý và chặn bot độc hại, bảo vệ tài nguyên'
+        },
+        {
+          title: 'API Security',
+          description: 'Bảo mật API với AI Central Engine'
+        },
+        {
+          title: 'Hợp tác CDNetworks',
+          description: 'Đối tác chiến lược toàn cầu về bảo mật và CDN'
+        }
+      ]
+    },
+    {
+      category: 'CustomerCare - Chăm sóc khách hàng',
+      icon: '🤝',
+      features: [
+        {
+          title: 'Kiến trúc Microservice',
+          description: 'Hệ thống linh hoạt, dễ mở rộng theo nhu cầu'
+        },
+        {
+          title: 'Quản lý tài khoản',
+          description: 'Quản lý thông tin khách hàng tập trung, hiệu quả'
+        },
+        {
+          title: 'Hệ thống ticket',
+          description: 'Theo dõi và xử lý yêu cầu hỗ trợ chuyên nghiệp'
+        },
+        {
+          title: 'Quản lý nhân sự',
+          description: 'Phân quyền và quản lý đội ngũ chăm sóc khách hàng'
+        },
+        {
+          title: 'Cổng thông tin khách hàng',
+          description: 'Portal cho khách hàng tự tra cứu và quản lý dịch vụ'
+        },
+        {
+          title: 'Tích hợp đa kênh',
+          description: 'Email, SMS, Chat, Social Media - Tất cả trong một'
+        }
+      ]
+    },
+    {
+      category: 'Hóa đơn điện tử',
+      icon: '🧾',
+      features: [
+        {
+          title: 'Tuân thủ pháp luật',
+          description: 'Đáp ứng đầy đủ quy định về hóa đơn điện tử Việt Nam'
+        },
+        {
+          title: 'Ký số tự động',
+          description: 'Tích hợp chữ ký số, đảm bảo tính pháp lý'
+        },
+        {
+          title: 'Báo cáo thuế',
+          description: 'Xuất báo cáo thuế theo quy định cơ quan thuế'
+        },
+        {
+          title: 'Phân tích doanh thu',
+          description: 'Dashboard thống kê, phân tích doanh thu chi tiết'
+        },
+        {
+          title: 'Đa ngành nghề',
+          description: 'Áp dụng cho bán lẻ, TMĐT, sản xuất, ngân hàng'
+        },
+        {
+          title: 'Gửi tự động',
+          description: 'Gửi hóa đơn qua email/SMS tự động cho khách hàng'
+        }
+      ]
+    },
+    {
       category: 'Báo cáo & Phân tích',
       icon: '📊',
       features: [

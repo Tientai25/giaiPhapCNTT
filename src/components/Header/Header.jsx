@@ -53,6 +53,9 @@ function Header() {
           <button type="button" onClick={() => navigate('/tinh-nang')}>
             Tính năng
           </button>
+          <button type="button" onClick={() => navigate('/ve-chung-toi')}>
+            Về chúng tôi
+          </button>
           <button type="button" onClick={() => handleNavClick('pricing')}>
             Bảng giá
           </button>
@@ -90,6 +93,9 @@ function Header() {
           </button>
           <button type="button" onClick={() => { navigate('/tinh-nang'); setMobileMenuOpen(false); }}>
             Tính năng
+          </button>
+          <button type="button" onClick={() => { navigate('/ve-chung-toi'); setMobileMenuOpen(false); }}>
+            Về chúng tôi
           </button>
           <button type="button" onClick={() => handleNavClick('pricing')}>
             Bảng giá

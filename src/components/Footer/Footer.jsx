@@ -9,12 +9,12 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">TDT Vinaphone</h3>
+            <h3 className="footer-title">TDT Company</h3>
             <p className="footer-text">
-              Tổng Công ty Dịch vụ Viễn thông
+              Công ty Cổ phần Dịch vụ Công nghệ và Chuyển đổi số
             </p>
             <p className="footer-text">
-              Trụ sở:  Quận Đống Đa, Thành phố Hà Nội
+              Trụ sở: Tầng 2, Tòa nhà Detech Tower, 8 Tôn Thất Thuyết, Mỹ Đình 2, Nam Từ Liêm, Hà Nội
             </p>
             <div className="footer-keywords">
               <span className="keyword-tag">Hợp đồng điện tử</span>
@@ -35,8 +35,9 @@ function Footer() {
           <div className="footer-section">
             <h3 className="footer-title">Kênh truyền thông</h3>
             <ul className="footer-contact">
-              <li>📞 Hotline: 18001260</li>
-              <li>📧 Email: cskh@TDT.vn</li>
+              <li>📞 Hotline: 0919 437 678</li>
+              <li>📧 Email: contact@digitalservices.vn</li>
+              <li>🌐 Website: www.digitalservices.vn</li>
             </ul>
           </div>
 
