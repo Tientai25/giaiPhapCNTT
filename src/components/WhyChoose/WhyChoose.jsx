@@ -23,7 +23,10 @@ function WhyChoose() {
     <section className="why-choose">
       <div className="why-choose-container">
         <h2 className="section-title">Cơ sở pháp lý</h2>
-        <p className="section-subtitle">TDT eContract đáp ứng đầy đủ các điều kiện và nguyên tắc của Luật Giao dịch Điện tử Việt Nam</p>
+        <p className="section-subtitle">
+          Tuân thủ đầy đủ Luật Giao dịch Điện tử Việt Nam,<br/>
+          đảm bảo giá trị pháp lý tối đa cho hợp đồng của bạn
+        </p>
         <div className="reasons-grid">
           {legalPoints.map((point, index) => (
             <div key={index} className="reason-card">

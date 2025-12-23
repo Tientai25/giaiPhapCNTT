@@ -42,9 +42,11 @@ function Process() {
           ))}
         </div>
         <div className="cta-section">
-          <p className="cta-text">Trải nghiệm TDT eContract ngay bây giờ</p>
-          <p className="cta-subtext">Để ký hợp đồng mọi lúc, mọi nơi</p>
-          <button className="btn-primary-large">Dùng thử miễn phí</button>
+          <div className="cta-content">
+            <h2 className="cta-text">Trải nghiệm TDT eContract ngay bây giờ</h2>
+            <p className="cta-subtext">Để ký hợp đồng mọi lúc, mọi nơi</p>
+            <button className="btn-primary-large">Dùng thử miễn phí</button>
+          </div>
         </div>
       </div>
     </section>

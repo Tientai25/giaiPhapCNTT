@@ -288,9 +288,10 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #64748b;
+  color: #334155;
   border-bottom: 1px solid #e2e8f0;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  line-height: 1.5;
   transition: all 0.2s ease;
 }
 
@@ -300,8 +301,12 @@
 }
 
 .pricing-card.popular .feature-item {
-  color: rgba(255, 255, 255, 0.9);
-  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+}
+
+.pricing-card.popular .feature-item:hover {
+  color: #ffffff;
 }
 
 .check-icon {
@@ -312,7 +317,7 @@
 }
 
 .pricing-card.popular .check-icon {
-  color: #fbbf24;
+  color: #fde047;
 }
 
 .feature-icon {
@@ -322,7 +327,8 @@
 }
 
 .pricing-card.popular .feature-icon {
-  color: #fbbf24;
+  color: #fde047;
+  stroke: currentColor;
 }
 
 .plan-button {
