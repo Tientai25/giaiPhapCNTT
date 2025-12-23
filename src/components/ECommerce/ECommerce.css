@@ -191,14 +191,15 @@
 
 .explore-link {
   display: inline-block;
-  padding: 0.75rem 2rem;
+  padding: 1rem 2.5rem;
   color: #667eea;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
   border: 2px solid #667eea;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .explore-link:hover {
@@ -335,6 +336,19 @@
   .cta-section {
     flex-direction: column;
     gap: 12px;
+    padding: 0 1rem;
+  }
+
+  /* Make the CTA link responsive on tablet/mobile */
+  .explore-link {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    white-space: normal;
+    line-height: 1.4;
   }
 
   .btn-primary-large,
@@ -393,6 +407,12 @@
 
   .benefit-item {
     font-size: 0.875rem;
+  }
+
+  /* Fine-tune CTA link for small phones */
+  .explore-link {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
   }
 
   .btn-primary-large,
